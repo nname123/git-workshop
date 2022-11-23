@@ -19,7 +19,6 @@ git remote add origin {url}
 看起來是檔案已存在，我google一下之後使用
 ```
 git remote rm origin 
-
 ```
 之後再試就可以了。我看了一下應該是刪除origin這東東再新增就不會錯誤，因為是刪除所以我檢查了github上的檔案好像也沒東西不見，之後google發現
 >origin 表示遠端，master 表示分支名，接在 origin 之後表示是遠端分支名。
