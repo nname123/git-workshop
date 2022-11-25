@@ -32,7 +32,7 @@ git push -u origin main
 用clone指令下載到電腦
 
 ```
-git clone
+git clone {url}
 ```
 然後要進去clone下來的資料夾
 ```
