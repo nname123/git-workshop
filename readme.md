@@ -7,29 +7,39 @@
 | 正在編輯的檔案| git add 之後的儲存位置|git commit之後的位置|
 
 ## 小問題
-我把家裡電腦想要用git pull 上課資料回電腦的時候，發現一些奇怪的問題，
-之前的老師有教我麼使用ssh連線，那我在家想用ssh連線有需要那個ssh檔案嗎?還是說輸入密碼就能Push/Pull呢?
+原本對於Github下載資料的方法有疑問，現在已大致理解沒問題了，順便紀錄一下。
+## 第一次上傳
 
-我記得要連線遠端是要用三個指令，我在家使用這個指令之後他報錯
+commit完後用下面的指令建立與遠端的連線
 ```
 git remote add origin {url}
 ```
-結果顯示
-`error: remote origin already exists.`  
-看起來是檔案已存在，我google一下之後使用
-```
-git remote rm origin 
-```
-之後再試就可以了。我看了一下應該是刪除origin這東東再新增就不會錯誤，因為是刪除所以我檢查了github上的檔案好像也沒東西不見，之後google發現
->origin 表示遠端，master 表示分支名，接在 origin 之後表示是遠端分支名。
+url有分`https`跟`ssh`   
+>`ssh`上傳時不用輸入帳密,但需要先在電腦設定ssh且Github帳號要輸入ssh公鑰認證   
 
-我對這部分有點混亂，課堂上有把 master 改成 main，然後又分遠端跟本地端
-* master：本地分支名。
-* origin master：origin 表示遠端，master 表示分支名，接在 origin 之後表示是遠端分支名。
-* origin/master：遠端分支在本地的拷貝，因此稱為本地分支。
+>`https`上傳時需輸入帳密登入Github
 
-看起來我刪掉的origin是遠端上的連結?我在家改了之後不知道之後用教室的電腦會不會報錯...
-不太了解不同設備要對同一份git編輯上傳的具體步驟是什麼，老師有示範首次上傳的方法，那第二台設備的連結方式也是一樣那三個指令嗎?
+之後用這兩個老師講過的指令
+```
+git branch -M main
+git push -u origin main
+```
+之後就可以正常編輯push/pull
+
+
+## Github上已經有檔案時
+
+用clone指令下載到電腦
+
+```
+git clone
+```
+然後要進去clone下來的資料夾
+```
+cd {clone下來的資料夾}
+```
+之後就可以正常編輯push/pull
+
 
 
 
